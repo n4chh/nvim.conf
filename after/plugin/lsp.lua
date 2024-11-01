@@ -1,4 +1,3 @@
-vim.opt.signcolumn = yes
 local lspconfig_defaults = require('lspconfig').util.default_config
 lspconfig_defaults.capabilities = vim.tbl_deep_extend(
 	'force',
