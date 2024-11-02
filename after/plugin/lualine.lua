@@ -18,6 +18,7 @@ require('lualine').setup {
     },
     ignore_focus = {},
     always_divide_middle = true,
+    always_show_tabline = true,
     globalstatus = false,
     refresh = {
       statusline = 1000,
@@ -41,7 +42,14 @@ require('lualine').setup {
     lualine_y = {},
     lualine_z = {}
   },
-  tabline = {},
+  tabline = {
+    lualine_a = {'buffers'},
+    lualine_b = {},
+    lualine_c = {},
+    lualine_x = {},
+    lualine_y = {},
+    lualine_z = {'tabs'}
+  },
   winbar = {},
   inactive_winbar = {},
   extensions = {}
