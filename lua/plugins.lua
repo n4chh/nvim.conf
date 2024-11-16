@@ -1,4 +1,3 @@
-vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
@@ -25,5 +24,6 @@ return require('packer').startup(function(use)
   use({'williamboman/mason-lspconfig.nvim'})
   use({'folke/which-key.nvim'})
   use 'cormacrelf/dark-notify'
+  use 'navarasu/onedark.nvim'
 end)
 
