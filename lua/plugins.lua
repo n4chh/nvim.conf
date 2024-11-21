@@ -24,6 +24,7 @@ return require('packer').startup(function(use)
   use({'williamboman/mason-lspconfig.nvim'})
   use({'folke/which-key.nvim'})
   use 'cormacrelf/dark-notify'
+  use 'audibleblink/hackthebox.vim'
   use 'navarasu/onedark.nvim'
 end)
 
