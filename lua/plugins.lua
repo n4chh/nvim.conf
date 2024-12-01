@@ -26,5 +26,6 @@ return require('packer').startup(function(use)
   use 'cormacrelf/dark-notify'
   use 'audibleblink/hackthebox.vim'
   use 'navarasu/onedark.nvim'
+  use 'norcalli/nvim-colorizer.lua'
 end)
 
