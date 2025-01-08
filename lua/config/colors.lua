@@ -8,8 +8,8 @@ require('onedark').setup  {
     cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
 
     -- toggle theme style ---
-    toggle_style_key = nil, -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
-    toggle_style_list = {'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'}, -- List of styles to toggle between
+    toggle_style_key = '<leader>ts', -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
+    toggle_style_list = {'darker','light'}, -- List of styles to toggle between
 
     -- Change code style ---
     -- Options are italic, bold, underline, none
@@ -28,13 +28,19 @@ require('onedark').setup  {
     },
 
     -- Custom Highlights --
-    colors = {}, -- Override default colors
+    colors = {
+		green = "#9fef00",
+		bright_green = "#c5f467"
+	}, -- Override default colors
     highlights = {}, -- Override highlight groups
 
     -- Plugins Config --
     diagnostics = {
         darker = true, -- darker colors for diagnostic
         undercurl = true,   -- use undercurl instead of underline for diagnostics
-        background = true,    -- use background color for virtual text
+        background = false,    -- use background color for virtual text
     },
 }
+
+require('onedark').load()
+

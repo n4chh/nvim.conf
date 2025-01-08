@@ -4,11 +4,15 @@ local dn = require('dark_notify')
 dn.run({
     schemes = {
       dark = {
-	      background = "dark"
+		  colorscheme = "onedark",
+		  background = "dark"
       },
       light = {
-	      background = "light",
+		  colorscheme = "onedark",
+		  background = "light",
+
       },
     },
+	onchange = require'onedark'.toggle
 })
 
