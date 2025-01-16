@@ -6,6 +6,8 @@ wk.add({
       return require("which-key.extras").expand.buf()
     end,
   },
+  { "<leader>d", group = "Diagnósticos" },
+  { "<leader>df", vim.diagnostic.open_float, desc = "Mostrar diagnóstico."},
   -- Después de nvim 10, K se habilitó por defecto al hover del
 -- lsp.
   { "[b", "<cmd>bp<cr>", desc = "Buffer anterior"},
