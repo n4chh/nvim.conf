@@ -19,7 +19,7 @@ require('onedark').setup  {
     code_style = {
         comments = 'italic',
         keywords = 'none',
-        functions = 'none',
+        functions = 'bold',
         strings = 'none',
         variables = 'none'
     },
@@ -64,10 +64,8 @@ require('onedark').setup  {
 		["@keyword.import"] = {fg = '$bright_red'},
 		["@keyword.operator"] = {fg = '$bright_red'},
 		["@keyword.repeat"] = {fg = '$bright_red'},
-		["@variable.parameter"] = {fg = '$bright_purple'},
-		["@parameter.reference"] = {fg = '$bright_purple'},
-		["@variable.builtin"] = {fg = '$bright_purple'},
-		["@label"] = {fg = '$bright_purple'},
+		["@lsp.typemod.variable.defaultLibrary"] = {fg = '$orange'},
+		["@lsp.type.parameter"] = {fg = '$bright_purple'},
 
 	}, -- Override highlight groups
 
