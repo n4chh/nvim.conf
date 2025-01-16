@@ -1,4 +1,5 @@
 -- Lua
+local cfg = vim.g.onedark_config
 require('onedark').setup  {
     -- Main options --
     style = 'darker', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
@@ -50,10 +51,24 @@ require('onedark').setup  {
 		bg0 = "#1a2332",
 		bg1 = "#1a2332",
 		bg2 = "#1a2332",
-		bg3 = "#1a2332",
+		bg3 = "#2a3342",
 
 	}, -- Override default colors
     highlights = {
+		["@function"] = {fg = '$bright_blue'},
+		["@function.method"] = {fg = '$bright_blue'},
+		["@keyword"] = {fg = '$bright_red'},
+		["@keyword.directive"] = {fg = '$bright_red'},
+		["@keyword.exception"] = {fg = '$bright_red'},
+		["@keyword.function"] = {fg = '$bright_red'},
+		["@keyword.import"] = {fg = '$bright_red'},
+		["@keyword.operator"] = {fg = '$bright_red'},
+		["@keyword.repeat"] = {fg = '$bright_red'},
+		["@variable.parameter"] = {fg = '$bright_purple'},
+		["@parameter.reference"] = {fg = '$bright_purple'},
+		["@variable.builtin"] = {fg = '$bright_purple'},
+		["@label"] = {fg = '$bright_purple'},
+
 	}, -- Override highlight groups
 
     -- Plugins Config --
@@ -63,6 +78,5 @@ require('onedark').setup  {
         background = true,    -- use background color for virtual text
     },
 }
-
 require('onedark').load()
 
