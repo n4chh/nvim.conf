@@ -52,6 +52,7 @@ require('onedark').setup  {
 		bg1 = "#1a2332",
 		bg2 = "#1a2332",
 		bg3 = "#2a3342",
+		bg_d = "#1a2332",
 
 	}, -- Override default colors
     highlights = {

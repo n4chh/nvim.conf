@@ -14,7 +14,7 @@ wk.add({
   { "<leader>fw", function()
 	  telescope.grep_string({ search = vim.fn.input("Buscar: ")})
   end,desc = "Buscar una palabra en los archivos" },
-  { "<leader>fe", vim.cmd.Lexplore ,desc = "Explorador" },
+  { "<leader>fe", vim.cmd.NvimTreeToggle ,desc = "Explorador" },
   })
 --vim.keymap.set("n","<leader>ff", telescope.find_files, {})
 --vim.keymap.set("n","<C-p>", telescope.git_files, {})

@@ -19,6 +19,9 @@ return require('packer').startup(function(use)
   use({'neovim/nvim-lspconfig'})
   use({'hrsh7th/nvim-cmp'})
   use({'hrsh7th/cmp-nvim-lsp'})
+-- Explorador
+  use('nvim-tree/nvim-tree.lua')
+  use('nvim-tree/nvim-web-devicons')
 -- TODO: 
   use({'williamboman/mason.nvim'})
   use({'williamboman/mason-lspconfig.nvim'})

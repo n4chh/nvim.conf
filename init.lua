@@ -2,6 +2,7 @@ vim.cmd [[packadd packer.nvim]]
 vim.o.termguicolors = true
 require("config.colors")
 require("plugins")
+require("config.nvimtree")
 require("config.mappings")
 vim.opt.signcolumn = "yes"
 vim.o.number = true
