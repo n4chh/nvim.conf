@@ -19,7 +19,7 @@ require('onedark').setup  {
     code_style = {
         comments = 'italic',
         keywords = 'none',
-        functions = 'bold',
+        functions = 'none',
         strings = 'none',
         variables = 'none'
     },
@@ -56,16 +56,24 @@ require('onedark').setup  {
 	}, -- Override default colors
     highlights = {
 		["@function"] = {fg = '$bright_blue'},
+		["@function.builtin"] = {fg = '$bright_blue'},
+		["@function.macro"] = {fg = '$bright_blue'},
 		["@function.method"] = {fg = '$bright_blue'},
 		["@keyword"] = {fg = '$bright_red'},
 		["@keyword.directive"] = {fg = '$bright_red'},
 		["@keyword.exception"] = {fg = '$bright_red'},
 		["@keyword.function"] = {fg = '$bright_red'},
 		["@keyword.import"] = {fg = '$bright_red'},
+		["@keyword.conditional"] = {fg = '$bright_red'},
 		["@keyword.operator"] = {fg = '$bright_red'},
 		["@keyword.repeat"] = {fg = '$bright_red'},
-		["@lsp.typemod.variable.defaultLibrary"] = {fg = '$orange'},
 		["@lsp.type.parameter"] = {fg = '$bright_purple'},
+		["@lsp.type.keyword"] = {fg = '$bright_purple'},
+		["@lsp.typemod.variable.defaultLibrary"] = {fg = '$yellow'},
+		["@lsp.typemod.method.defaultLibrary"] = {fg = '$bright_blue'},
+		["@lsp.typemod.function.defaultLibrary"] = {fg = '$bright_blue'},
+		["@lsp.type.method"] = {fg = '$bright_blue'},
+		["@lsp.type.functions"] = {fg = '$bright_blue'},
 
 	}, -- Override highlight groups
 
