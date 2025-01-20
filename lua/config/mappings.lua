@@ -15,7 +15,8 @@ wk.add({
   { "<leader>W", proxy = "<c-w>", group = "windows" }, -- proxy to window mappings
   {
     mode = { "n", "v" }, -- NORMAL and VISUAL mode
-    { "<leader>q", "<cmd>q<cr>", desc = "Cerrar" },
+    { "<leader>q", "<cmd>q<cr>", desc = "Cerrar ventana" },
     { "<leader>w", "<cmd>w<cr>", desc = "Guardar" },
+    { "<leader>c", ":bp<bar>sp<bar>bn<bar>bd<CR>", desc = "Cerrar Buffer" },
   }
 })
