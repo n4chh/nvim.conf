@@ -4,15 +4,15 @@ local dn = require('dark_notify')
 dn.run({
     schemes = {
       dark = {
-		  colorscheme = "onedark",
+		  colorscheme = "vscode",
 		  background = "dark"
       },
       light = {
-		  colorscheme = "onedark",
+		  colorscheme = "vscode",
 		  background = "light",
 
       },
     },
-	onchange = require'onedark'.toggle
+	-- onchange = require'onedark'.toggle
 })
 

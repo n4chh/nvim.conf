@@ -1,4 +1,5 @@
 
+vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   -- Temas
@@ -30,5 +31,6 @@ return require('packer').startup(function(use)
   use 'audibleblink/hackthebox.vim'
   use 'navarasu/onedark.nvim'
   use 'norcalli/nvim-colorizer.lua'
+  -- vim.cmd[[ PackerSync]] 
 end)
 
