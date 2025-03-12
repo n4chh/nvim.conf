@@ -4,11 +4,11 @@ local dn = require('dark_notify')
 dn.run({
     schemes = {
       dark = {
-		  colorscheme = "vscode",
+		  colorscheme = "github_dark",
 		  background = "dark"
       },
       light = {
-		  colorscheme = "vscode",
+		  colorscheme = "github_light",
 		  background = "light",
 
       },

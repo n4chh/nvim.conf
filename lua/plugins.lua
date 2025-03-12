@@ -4,6 +4,7 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   -- Temas
   use 'Mofiqul/vscode.nvim'
+  use 'projekt0n/github-nvim-theme'
   -- Telescope
   use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.8',
