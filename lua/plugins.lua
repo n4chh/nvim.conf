@@ -28,7 +28,7 @@ return require('packer').startup(function(use)
   use({'williamboman/mason.nvim'})
   use({'williamboman/mason-lspconfig.nvim'})
   use({'folke/which-key.nvim'})
-  use 'cormacrelf/dark-notify'
+  use 'f-person/auto-dark-mode.nvim'
   use 'audibleblink/hackthebox.vim'
   use 'navarasu/onedark.nvim'
   use 'norcalli/nvim-colorizer.lua'
