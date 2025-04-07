@@ -100,8 +100,7 @@ require('mason-lspconfig').setup({
 require('mason-nvim-dap').setup()
 local dap = require('dap')
 
--- dap.adapters
--- default_capabilities
+-- dap.adapters default_capabilities
 require('mason-nvim-dap').setup({
 	ensure_installed = {
 		"cppdbg",
@@ -133,7 +132,11 @@ end
 dap.listeners.before.event_terminated.dapui_config = function()
 	dapui.close()
 end
-dap.litseners.before.event_exited.dapui_config = function()
+dap.listeners.before.event_exited.dapui_config = function()
 	dapui.close()
 end
+dapui.setup()
+
+
+
 

@@ -3,7 +3,7 @@ vim.o.termguicolors = true
 require("plugins")
 require("config.colors")
 require("config.nvimtree")
-require("config.mappings")
+-- require("config.mappings")
 vim.opt.signcolumn = "yes"
 vim.o.number = true
 vim.o.undofile = true
