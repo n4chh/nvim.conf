@@ -97,3 +97,43 @@ require('mason-lspconfig').setup({
 		end,
 	}
 })
+require('mason-nvim-dap').setup()
+local dap = require('dap')
+
+-- dap.adapters
+-- default_capabilities
+require('mason-nvim-dap').setup({
+	ensure_installed = {
+		"cppdbg",
+		"python",
+		"delve"
+	},
+	handlers = {
+		function(config)
+			require('mason-nvim-dap').default_setup(config)
+		end,
+		-- c = function(config) 
+		-- 	config.adapters = {
+		-- 		type = "executable",
+		-- 		command= "/usr/bin/gdb",
+		-- 	}
+		-- end,
+	}
+})
+
+
+local dapui = require("dapui")
+dap.listeners.before.attach.dapui_config = function() 
+	dapui.open()
+end
+dap.listeners.before.launch.dapui_config = function()
+	dapui.open()
+end
+
+dap.listeners.before.event_terminated.dapui_config = function()
+	dapui.close()
+end
+dap.litseners.before.event_exited.dapui_config = function()
+	dapui.close()
+end
+
