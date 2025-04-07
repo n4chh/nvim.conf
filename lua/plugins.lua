@@ -3,6 +3,7 @@ return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 	-- Temas
 	use 'Mofiqul/vscode.nvim'
+	use 'loctvl842/monokai-pro.nvim'
 	use 'projekt0n/github-nvim-theme'
 	-- Telescope
 	use {
