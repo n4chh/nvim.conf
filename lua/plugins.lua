@@ -27,6 +27,8 @@ return require('packer').startup(function(use)
 	-- LSP
 	use({ 'williamboman/mason.nvim' })
 	use({ 'williamboman/mason-lspconfig.nvim' })
+	-- Java
+	use 'mfussenegger/nvim-jdtls'
 	-- Debug
 	use({ 'mfussenegger/nvim-dap' })
 	use({ 'jay-babu/mason-nvim-dap.nvim' })
