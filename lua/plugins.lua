@@ -5,6 +5,7 @@ return require('packer').startup(function(use)
 	use 'Mofiqul/vscode.nvim'
 	use 'loctvl842/monokai-pro.nvim'
 	use 'projekt0n/github-nvim-theme'
+	use "rebelot/kanagawa.nvim"
 	-- Telescope
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.8',

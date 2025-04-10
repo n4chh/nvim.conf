@@ -15,7 +15,6 @@ wk.add({
 
 	{ "<leader>d",  group = "Depuración" },
 	-- {"<leader>dr", ,desc = "Iniciar depuración"},
-	{ "<leader>dut",       dapui.toggle,            desc = "Mostrar/Ocultar interfaz de depuracion" },
 	{ "<leader>dsi",       dap.step_into,           desc = "Step into" },
 	{ "<leader>dso",       dap.step_over,           desc = "Step over" },
 	{ "<leader>dsO",     dap.step_out,            desc = "Step out" },
@@ -23,7 +22,11 @@ wk.add({
 	{ "<leader>dc",     dap.continue,                 desc = "Continue" },
 	{ "<leader>dR",     dap.run_to_cursor,       desc = "Run to cursor" },
 	{ "<leader>dt", dap.terminate, desc = "Terminate session"},
-
+	{ "<leader>du",  group = "Interfaz" },
+	{ "<leader>dut",       dapui.toggle,            desc = "Mostrar/Ocultar interfaz de depuracion" },
+	-- { "<leader>dus",       dap.step_into,           desc = "Scopes" },
+	-- { "<leader>duT",       dap.step_into,           desc = "threads" },
+	--
 
 	-- Errores
 	{ "<leader>e",  group = "Diagnósticos" },
