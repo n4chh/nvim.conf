@@ -1,7 +1,6 @@
 vim.g.mapleader = ' '
 local dap = require('dap')
 local dapui = require('dapui')
-local neogit = require('neogit')
 local wk = require("which-key")
 
 local defaults = {
@@ -233,7 +232,7 @@ local mappings = {
 	{ "<leader>gp",  "<cmd>lua require 'gitsigns'.preview_hunk()<cr>",         desc = "Preview Hunk",      nowait = true, remap = false },
 	{ "<leader>gr",  "<cmd>lua require 'gitsigns'.reset_hunk()<cr>",           desc = "Reset Hunk",        nowait = true, remap = false },
 	{ "<leader>gs",  "<cmd>lua require 'gitsigns'.stage_hunk()<cr>",           desc = "Stage Hunk",        nowait = true, remap = false },
-	{ "<leader>gt",  neogit.open,                                              desc = "Open UI",           nowait = true, remap = false },
+	{ "<leader>gt",  "<cmd>Neogit<cr>",                                              desc = "Open UI",           nowait = true, remap = false },
 	{ "<leader>gu",  "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",      desc = "Undo Stage Hunk",   nowait = true, remap = false },
 	-- LSP
 	{ "<leader>l",   group = "LSP",                                            nowait = true,              remap = false },
