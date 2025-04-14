@@ -6,6 +6,8 @@ return require('packer').startup(function(use)
 	use 'loctvl842/monokai-pro.nvim'
 	use 'projekt0n/github-nvim-theme'
 	use "rebelot/kanagawa.nvim"
+	use "echasnovski/mini.icons"
+
 	-- Telescope
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.8',
@@ -25,6 +27,14 @@ return require('packer').startup(function(use)
 	-- Explorador
 	use('nvim-tree/nvim-tree.lua')
 	use('nvim-tree/nvim-web-devicons')
+	-- Git
+	use('lewis6991/gitsigns.nvim')
+	use { 'NeogitOrg/neogit',
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"sindrets/diffview.nvim",
+			"nvim-telescope/telescope.nvim",
+		} }
 	-- LSP
 	use({ 'williamboman/mason.nvim' })
 	use({ 'williamboman/mason-lspconfig.nvim' })
@@ -40,5 +50,6 @@ return require('packer').startup(function(use)
 	use 'audibleblink/hackthebox.vim'
 	use 'navarasu/onedark.nvim'
 	use 'norcalli/nvim-colorizer.lua'
+
 	-- vim.cmd[[ PackerSync]]
 end)

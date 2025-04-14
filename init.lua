@@ -1,4 +1,3 @@
-vim.cmd [[packadd packer.nvim]]
 vim.o.termguicolors = true
 require("plugins")
 require("config.colors")

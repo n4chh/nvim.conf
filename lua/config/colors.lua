@@ -1,4 +1,5 @@
 -- Lua
+require('mini.icons').setup()
 require('monokai-pro').setup()
 local cfg = vim.g.onedark_config
 require('onedark').setup  {
