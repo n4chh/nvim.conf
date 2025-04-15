@@ -216,6 +216,7 @@ local mappings = {
 	{ "<leader>s",   group = "Search",                                         nowait = true,              remap = false },
 	{ "<leader>sc",  "<cmd>Telescope commands<cr>",                            desc = "Commands",          nowait = true, remap = false },
 	{ "<leader>sh",  "<cmd>Telescope help_tags<cr>",                           desc = "Find Help",         nowait = true, remap = false },
+	{ "<leader>sd",  "<cmd>Telescope diagnostics<cr>",                           desc = "Find diagnostics",         nowait = true, remap = false },
 	{ "<leader>sk",  "<cmd>Telescope keymaps<cr>",                             desc = "Keymaps",           nowait = true, remap = false },
 	{ "<leader>sm",  "<cmd>Telescope man_pages<cr>",                           desc = "Man Pages",         nowait = true, remap = false },
 	{ "<leader>sr",  "<cmd>Telescope registers<cr>",                           desc = "Registers",         nowait = true, remap = false },
@@ -241,6 +242,7 @@ local mappings = {
 	{ "<leader>li",  "<cmd>LspInfo<cr>",                                       desc = "Info",              nowait = true, remap = false },
 	{ "<leader>ll",  "<cmd>lua vim.lsp.codelens.run()<cr>",                    desc = "CodeLens Action",   nowait = true, remap = false },
 	{ "<leader>lr",  "<cmd>lua vim.lsp.buf.rename()<cr>",                      desc = "Rename",            nowait = true, remap = false },
+	{ "<leader>ld",  "<cmd>lua vim.diagnostic.open_float()<cr>",                desc = "Document Symbols",  nowait = true, remap = false },
 	{ "<leader>ls",  "<cmd>Telescope lsp_document_symbols<cr>",                desc = "Document Symbols",  nowait = true, remap = false },
 }
 
