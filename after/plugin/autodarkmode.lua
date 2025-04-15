@@ -4,9 +4,9 @@ local onedark = require('onedark')
 
 adm.setup({
 	set_dark_mode = function()
-		-- vim.api.nvim_set_option_value("background", "dark", {})
+		vim.api.nvim_set_option_value("background", "dark", {})
 		-- vim.cmd('colorscheme kanagawa')
-		require('onedark').setup {
+		onedark.setup {
 			style = 'darker',
 			-- colors = {
 			-- 	green = "#9fef00",
@@ -33,10 +33,10 @@ adm.setup({
 			-- 	bg_d = "#1a2332",
 			-- }, -- htb colors
 		}
-		require('onedark').load()
+		onedark.load()
 	end,
 	set_light_mode = function()
-		-- vim.api.nvim_set_option_value("background", "light", {})
+		vim.api.nvim_set_option_value("background", "light", {})
 		-- vim.cmd('colorscheme kanagawa-lotus')
 		onedark.setup {
 			style = 'light',
