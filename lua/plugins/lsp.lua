@@ -31,6 +31,7 @@ return {
 		config = function()
 			require("mason-nvim-dap").setup()
 			local dap = require("dap")
+			local wk = require("which-key")
 
 			-- dap.adapters default_capabilities
 
@@ -49,6 +50,13 @@ return {
 			-- 	dapui.close()
 			-- end
 			dapui.setup()
+
+			wk.add({ "<leader>du", dapui.toggle, desc = "UI" })
+			wk.add({ "<leader>dc", dap.continue, desc = "Continue" })
+			wk.add({ "<leader>ds", group = "Steps" })
+			wk.add({ "<leader>dsi", dap.step_into, desc = "Step into" })
+			wk.add({ "<leader>dso", dap.step_over, desc = "Step over" })
+			wk.add({ "<leader>dsO", dap.step_out, desc = "Step out" })
 		end,
 	},
 }
