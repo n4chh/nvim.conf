@@ -7,7 +7,16 @@ return require('packer').startup(function(use)
 	use 'projekt0n/github-nvim-theme'
 	use "rebelot/kanagawa.nvim"
 	use "echasnovski/mini.icons"
+	use "kepano/flexoki-neovim"
 
+	-- UI
+	use {
+	'folke/noice.nvim',
+	requires = {
+		    "MunifTanjim/nui.nvim",
+			"rcarriga/nvim-notify"
+	}
+	}
 	-- Telescope
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.8',

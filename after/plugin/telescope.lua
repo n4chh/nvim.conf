@@ -1,4 +1,4 @@
-local telescope = require("telescope.builtin")
+local telescope = require("telescope")
 local wk = require("which-key")
 require("telescope").setup{
       pickers = {
@@ -7,3 +7,4 @@ require("telescope").setup{
         }
       }
 }
+telescope.load_extension("noice")
