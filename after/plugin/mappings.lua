@@ -242,7 +242,7 @@ local mappings = {
 	{ "<leader>li",  "<cmd>LspInfo<cr>",                                       desc = "Info",              nowait = true, remap = false },
 	{ "<leader>ll",  "<cmd>lua vim.lsp.codelens.run()<cr>",                    desc = "CodeLens Action",   nowait = true, remap = false },
 	{ "<leader>lr",  "<cmd>lua vim.lsp.buf.rename()<cr>",                      desc = "Rename",            nowait = true, remap = false },
-	{ "<leader>ld",  "<cmd>lua vim.diagnostic.open_float()<cr>",                desc = "Document Symbols",  nowait = true, remap = false },
+	{ "<leader>ld",  "<cmd>lua vim.diagnostic.open_float({border = \"rounded\"})<cr>",                desc = "Document Symbols",  nowait = true, remap = false },
 	{ "<leader>ls",  "<cmd>Telescope lsp_document_symbols<cr>",                desc = "Document Symbols",  nowait = true, remap = false },
 }
 
