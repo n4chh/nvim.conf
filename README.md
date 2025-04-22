@@ -25,6 +25,6 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 ```
 Aun así es recomendable revisar la instalación que se recomienda en la propia documentación
 ```bash
-git clone https://github.com/n4chh/nvim ~/.config/nvim
+git clone https://github.com/n4chh/nvim.conf ~/.config/nvim
 nvim --cmd PackerSync
 ```
