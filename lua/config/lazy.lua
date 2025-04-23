@@ -25,10 +25,10 @@ require("lazy").setup({
 	spec = {
 		-- import your plugins
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins" },
-		{ "LazyVim/LazyVim", import = "lazyvim.extras.lang.clangd" },
-		{ "LazyVim/LazyVim", import = "lazyvim.extras.lang.go" },
-		{ "LazyVim/LazyVim", import = "lazyvim.extras.lang.java" },
-		{ "LazyVim/LazyVim", import = "lazyvim.extras.editor.snacks_picker" },
+		{ "LazyVim/LazyVim", import = "lazyvim.plugins.extras.lang.clangd" },
+		{ "LazyVim/LazyVim", import = "lazyvim.plugins.extras.lang.go" },
+		{ "LazyVim/LazyVim", import = "lazyvim.plugins.extras.lang.java" },
+		{ "LazyVim/LazyVim", import = "lazyvim.plugins.extras.editor.snacks_picker" },
 		{ import = "plugins" },
 	},
 	-- Configure any other settings here. See the documentation for more details.
