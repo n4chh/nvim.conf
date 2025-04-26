@@ -3,28 +3,18 @@
 ## 🛠️ Installación
 
 Si se desea realizar una copia de seguridad se puede hacer de la siguiente forma
-```bash
-mv ~/.config/nvim ~/.config/nvim.bak
-mv ~/.local/share/nvim ~/.local/share/nvim.bak
-mv ~/.local/state/nvim ~/.local/state/nvim.bak
-mv ~/.cache/nvim ~/.cache/nvim.bak
+```powershell
+Move-Item $env:LOCALAPPDATA\nvim $env:LOCALAPPDATA\nvim.bak
+Move-Item $env:LOCALAPPDATA\nvim-data $env:LOCALAPPDATA\nvim-data.bak
 ```
 
 Si solo se desea borrar los archivos se pueden usar los siguientes comandos
-```bash
-rm -rf ~/.config/nvim
-rm -rf ~/.local/share/nvim
-rm -rf ~/.local/state/nvim
-rm -rf ~/.cache/nvim
+```powershell
+Remove-Item $env:LOCALAPPDATA\nvim -Recurse
+Remove-Item $env:LOCALAPPDATA\nvim-data -Recurse
 ```
-## Instalación de packer
-Antes de clonar este repo, es necesario instalar packer. Para ello se pueden utilizar los siguientes comandos:
-```bash
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-```
-Aun así es recomendable revisar la instalación que se recomienda en la propia documentación
-```bash
+
+```powershell
 git clone https://github.com/n4chh/nvim.conf ~/.config/nvim
-nvim --cmd PackerSync
+nvim 
 ```
