@@ -25,6 +25,7 @@ require("lazy").setup({
 	spec = {
 		-- import your plugins
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins" },
+		{ "LazyVim/LazyVim", import = "lazyvim.plugins.extras.dap.core" },
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins.extras.lang.clangd" },
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins.extras.lang.python" },
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins.extras.lang.go" },
