@@ -1,5 +1,15 @@
 return {
 	{
+		"neovim/nvim-lspconfig",
+		opts = {
+			diagnostics = {
+				float = {
+					border = "rounded",
+				},
+			},
+		},
+	},
+	{
 		"mfussenegger/nvim-dap",
 		config = function()
 			require("mason-nvim-dap").setup({
