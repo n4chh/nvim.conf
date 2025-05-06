@@ -39,7 +39,7 @@ return {
 			end,
 			set_light_mode = function()
 				vim.api.nvim_set_option_value("background", "light", {})
-				vim.cmd("colorscheme monokai-pro")
+				vim.cmd("colorscheme monokai-pro-light")
 				-- vim.cmd("colorscheme github_light")
 				-- onedark.setup {
 				-- 	style = 'light',

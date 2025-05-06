@@ -31,6 +31,7 @@ require("lazy").setup({
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins.extras.lang.go" },
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins.extras.lang.java" },
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins.extras.editor.snacks_picker" },
+		{ "LazyVim/LazyVim", import = "lazyvim.plugins.extras.util.mini-hipatterns" },
 		{ import = "plugins" },
 	},
 	-- Configure any other settings here. See the documentation for more details.
