@@ -25,10 +25,13 @@ require("lazy").setup({
 	spec = {
 		-- import your plugins
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins" },
+		{ "LazyVim/LazyVim", import = "lazyvim.plugins.extras.dap.core" },
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins.extras.lang.clangd" },
+		{ "LazyVim/LazyVim", import = "lazyvim.plugins.extras.lang.python" },
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins.extras.lang.go" },
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins.extras.lang.java" },
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins.extras.editor.snacks_picker" },
+		{ "LazyVim/LazyVim", import = "lazyvim.plugins.extras.util.mini-hipatterns" },
 		{ import = "plugins" },
 	},
 	-- Configure any other settings here. See the documentation for more details.
@@ -36,4 +39,7 @@ require("lazy").setup({
 	-- install = { colorscheme = { "habamax" } },
 	-- automatically check for plugin updates
 	checker = { enabled = true },
+	ui = {
+		border = "rounded",
+	},
 })

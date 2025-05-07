@@ -6,8 +6,8 @@ return {
 		adm.setup({
 			set_dark_mode = function()
 				vim.api.nvim_set_option_value("background", "dark", {})
-				-- vim.cmd('colorscheme kanagawa')
-				vim.cmd("colorscheme github_dark")
+				vim.cmd("colorscheme monokai-pro")
+				-- vim.cmd("colorscheme github_dark")
 				-- onedark.setup {
 				-- 	style = 'darker',
 				-- 	-- colors = {
@@ -39,8 +39,8 @@ return {
 			end,
 			set_light_mode = function()
 				vim.api.nvim_set_option_value("background", "light", {})
-				-- vim.cmd('colorscheme kanagawa-lotus')
-				vim.cmd("colorscheme github_light")
+				vim.cmd("colorscheme monokai-pro-light")
+				-- vim.cmd("colorscheme github_light")
 				-- onedark.setup {
 				-- 	style = 'light',
 				-- 	-- colors = {
