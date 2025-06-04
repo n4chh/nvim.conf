@@ -15,6 +15,6 @@ Remove-Item $env:LOCALAPPDATA\nvim-data -Recurse
 ```
 
 ```powershell
-git clone https://github.com/n4chh/nvim.conf ~/.config/nvim
+git clone https://github.com/n4chh/nvim.conf  $env:LOCALAPPDATA\nvim
 nvim 
 ```
