@@ -20,10 +20,23 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
--- Setup lazy.nvim
-require("lazy").setup({
+local spec
+if vim.g.vscode then
+	vim.cmd("set rnu")
+	vim.notify = require("vscode").notify
 	spec = {
-		-- import your plugins
+		-- { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+		-- { "LazyVim/LazyVim", import = "lazyvim.plugins.extras.dap.core" },
+		-- { "LazyVim/LazyVim", import = "lazyvim.plugins.extras.lang.clangd" },
+		-- { "LazyVim/LazyVim", import = "lazyvim.plugins.extras.lang.python" },
+		-- { "LazyVim/LazyVim", import = "lazyvim.plugins.extras.lang.go" },
+		-- { "LazyVim/LazyVim", import = "lazyvim.plugins.extras.lang.java" },
+		-- { "LazyVim/LazyVim", import = "lazyvim.plugins.extras.editor.snacks_picker" },
+		-- { "LazyVim/LazyVim", import = "lazyvim.plugins.extras.util.mini-hipatterns" },
+		-- { import = "plugins" },
+	}
+else
+	spec = {
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins" },
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins.extras.dap.core" },
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins.extras.lang.clangd" },
@@ -33,7 +46,11 @@ require("lazy").setup({
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins.extras.editor.snacks_picker" },
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins.extras.util.mini-hipatterns" },
 		{ import = "plugins" },
-	},
+	}
+end
+-- Setup lazy.nvim
+require("lazy").setup({
+	spec = spec,
 	-- Configure any other settings here. See the documentation for more details.
 	-- colorscheme that will be used when installing plugins.
 	-- install = { colorscheme = { "habamax" } },

@@ -6,7 +6,7 @@ return {
 		adm.setup({
 			set_dark_mode = function()
 				vim.api.nvim_set_option_value("background", "dark", {})
-				vim.cmd("colorscheme monokai-pro")
+				vim.cmd("colorscheme monokai-pro-machine")
 				-- vim.cmd("colorscheme github_dark")
 				-- onedark.setup {
 				-- 	style = 'darker',
