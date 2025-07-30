@@ -1,5 +1,6 @@
 vim.o.termguicolors = true
 require("config.lazy")
+require("config.lsp")
 vim.opt.signcolumn = "yes"
 vim.o.number = true
 vim.o.undofile = true
