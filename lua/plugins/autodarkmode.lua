@@ -2,76 +2,30 @@ return {
 	"f-person/auto-dark-mode.nvim",
 	config = function()
 		local adm = require("auto-dark-mode")
+		local lualine = require("lualine")
+
 		adm.setup({
 			set_dark_mode = function()
 				vim.api.nvim_set_option_value("background", "dark", {})
-				-- vim.cmd("colorscheme monokai-pro-machine")
+				-- local kanagawa_paper_ink = require("lualine.themes.kanagawa-paper-ink")
+				-- lualine.setup({ options = {
+				-- 	theme = kanagawa_paper_ink,
+				-- } })
 				-- vim.cmd("colorscheme tokyonight")
-				-- vim.cmd("colorscheme github_dark")
-				-- onedark.setup {
-				-- 	style = 'darker',
-				-- 	-- colors = {
-				-- 	-- 	green = "#9fef00",
-				-- 	-- 	bright_green = "#c5f467",
-				-- 	-- 	white = "#ffffff",
-				-- 	-- 	bright_white = "#c5d1eb",
-				-- 	-- 	black = "#000000",
-				-- 	-- 	bright_black = "#666666",
-				-- 	-- 	red = "#ff3e3e",
-				-- 	-- 	bright_red = "#ff8484",
-				-- 	-- 	blue = "#2e6cff",
-				-- 	-- 	bright_blue = "#5cb2ff",
-				-- 	-- 	yellow = "#ffaf00",
-				-- 	-- 	bright_yellow = "#ffcc5c",
-				-- 	-- 	purple = "#9f00ff",
-				-- 	-- 	bright_purple = "#cf8dfb",
-				-- 	-- 	cyan = "#2ee7b6",
-				-- 	-- 	bright_cyan = "#5cecc6",
-				-- 	-- 	fg = "#a4b1cd",
-				-- 	-- 	bg0 = "#1a2332",
-				-- 	-- 	bg1 = "#1a2332",
-				-- 	-- 	bg2 = "#1a2332",
-				-- 	-- 	bg3 = "#2a3342",
-				-- 	-- 	bg_d = "#1a2332",
-				-- 	-- }, -- htb colors
-				-- }
-				-- onedark.load()
+				-- vim.cmd("colorscheme github_dark_high_contrast")
+				vim.cmd("colorscheme github_dark")
 			end,
 			set_light_mode = function()
 				vim.api.nvim_set_option_value("background", "light", {})
-				-- vim.cmd("colorscheme monokai-pro-light")
+				-- local kanagawa_paper_canvas = require("lualine.themes.kanagawa-paper-canvas")
+				-- lualine.setup({ options = {
+				-- 	theme = kanagawa_paper_canvas,
+				-- } })
 				-- vim.cmd("colorscheme tokyonight-day")
-				-- vim.cmd("colorscheme github_light")
-				-- onedark.setup {
-				-- 	style = 'light',
-				-- 	-- colors = {
-				-- 	-- green = "#9fef00",
-				-- 	-- bright_green = "#c5f467",
-				-- 	-- white = "#ffffff",
-				-- 	-- bright_white = "#c5d1eb",
-				-- 	-- black = "#000000",
-				-- 	-- bright_black = "#666666",
-				-- 	-- red = "#ff3e3e",
-				-- 	-- bright_red = "#ff8484",
-				-- 	-- blue = "#2e6cff",
-				-- 	-- bright_blue = "#5cb2ff",
-				-- 	-- yellow = "#ffaf00",
-				-- 	-- bright_yellow = "#ffcc5c",
-				-- 	-- purple = "#9f00ff",
-				-- 	-- bright_purple = "#cf8dfb",
-				-- 	-- cyan = "#2ee7b6",
-				-- 	-- bright_cyan = "#5cecc6",
-				-- 	-- fg = "#1a2332",
-				-- 	-- bg0 = "#a4b1cd",
-				-- 	-- bg1 = "#a4b1cd",
-				-- 	-- bg2 = "#a4b1cd",
-				-- 	-- bg3 = "#94a1bd",
-				-- 	-- bg_d = "#a4b1cd",
-				-- 	-- }
-				-- }
-				-- onedark.load()
+				-- vim.cmd("colorscheme github_light_high_contrast")
+				vim.cmd("colorscheme github_light")
 			end,
-			update_interval = 3000,
+			update_interval = 1000,
 			fallback = "dark",
 		})
 	end,
