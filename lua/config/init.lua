@@ -1,2 +1,2 @@
-require('lsp')
-require('lazy')
+require('config.lsp')
+require('config.lazy')
