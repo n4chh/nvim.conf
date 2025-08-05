@@ -1,1 +1,2 @@
-require('lsp')
+require('auto.lsp')
+require('auto.visuals')

@@ -8,13 +8,13 @@ local mapping_plugins = {
 			-- refer to the configuration section below
 			-- preset = "helix",
 			win = {
-				width = { min = 30, max = 60 },
+				width = { min = 30, max = 80 },
 				height = { min = 4, max = 0.75 },
 				padding = { 0, 1 },
 				col = -1,
 				row = -1,
 				-- border = { "▛", "▀", "▜", "▐", "▟", "▄", "▙", "▌" },
-				border = "rounded",
+				border = vim.o.winborder,
 				title = true,
 				title_pos = "left",
 			},
@@ -25,24 +25,30 @@ local mapping_plugins = {
 			spec = {
 				{
 					mode = { "n", "v" },
-					{ "<leader><tab>", group = "tabs" },
-					{ "<leader>c", group = "code" },
 					{ "<leader>e", desc = "explorer", ":Neotree toggle<CR>" },
-					{ "<leader>d", group = "debug" },
-					{ "<leader>dp", group = "profiler" },
 					{ "<leader>f", group = "find" },
 					{ "<leader>fs", desc = "search", ":Files<CR>" },
-					{ "<leader>g", group = "git" },
-					{ "<leader>gh", group = "hunks" },
-					{ "<leader>q", group = "quit/session" },
+					{ "<leader>r", desc = "rename", vim.lsp.buf.rename },
+					{ "<F2>", desc = "rename", vim.lsp.buf.rename },
 					{ "<leader>s", group = "search" },
-					{ "<leader>u", group = "ui", icon = { icon = "󰙵 ", color = "cyan" } },
+					{ "<leader>sC", desc = "Search Colorscheme", ":Colors<CR>" },
+					{ "<leader>sh", desc = "Search helptags", ":Helptags<CR>" },
+					{ "<leader>sm", desc = "Search mappings", ":Maps<CR>" },
+					{ "<leader>sc", desc = "Search commands", ":Commands<CR>" },
 					{ "<leader>x", group = "diagnostics/quickfix", icon = { icon = "󱖫 ", color = "green" } },
+					{ "<leader>y", desc = "Yank to system clipboard", '"+y' },
+					{ "<leader>d", desc = "Delete and yank to system clipboard", '"+d' },
+					{ "<leader>c", desc = "Change and yank to system clipboard", '"+c' },
 					{ "[", group = "prev" },
 					{ "]", group = "next" },
 					{ "g", group = "goto" },
 					{ "gs", group = "surround" },
 					{ "z", group = "fold" },
+					{
+						"<leader>d",
+						desc = "Show diagnostic",
+						vim.diagnostic.open_float,
+					},
 					{
 						"<leader>b",
 						group = "buffer",
@@ -80,25 +86,25 @@ local visual_plugins = {
 		"f-person/auto-dark-mode.nvim",
 		config = function()
 			local adm = require("auto-dark-mode")
-			local lualine = require("lualine")
+			-- local lualine = require("lualine")
 
 			adm.setup({
 				set_dark_mode = function()
 					vim.api.nvim_set_option_value("background", "dark", {})
-					local kanagawa_paper_ink = require("lualine.themes.kanagawa-paper-ink")
-					lualine.setup({
-						options = {
-							theme = kanagawa_paper_ink,
-						}
-					})
+					-- local kanagawa_paper_ink = require("lualine.themes.kanagawa-paper-ink")
+					-- lualine.setup({
+					-- options = {
+					-- 	theme = kanagawa_paper_ink,
+					-- }
+					-- })
 				end,
 				set_light_mode = function()
-					local kanagawa_paper_canvas = require("lualine.themes.kanagawa-paper-canvas")
-					lualine.setup({
-						options = {
-							theme = kanagawa_paper_canvas,
-						}
-					})
+					-- local kanagawa_paper_canvas = require("lualine.themes.kanagawa-paper-canvas")
+					-- lualine.setup({
+					-- 	options = {
+					-- 		theme = kanagawa_paper_canvas,
+					-- 	}
+					-- })
 					vim.api.nvim_set_option_value("background", "light", {})
 				end,
 				update_interval = 1000,
@@ -109,8 +115,26 @@ local visual_plugins = {
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
-		config = function() end,
 	},
+	{
+		"xiyaowong/transparent.nvim",
+		opts = {
+			groups = {
+				"NormalFloat", "FloatBorder",
+				'Normal', 'NormalNC', 'Comment', 'Constant', 'Special', 'Identifier',
+				'Statement', 'PreProc', 'Type', 'Underlined', 'Todo', 'String', 'Function',
+				'Conditional', 'Repeat', 'Operator', 'Structure', 'LineNr', 'NonText',
+				'SignColumn', 'CursorLine', 'CursorLineNr', 'StatusLine', 'StatusLineNC',
+				'EndOfBuffer',
+			},
+		}
+	},
+	{
+		"norcalli/nvim-colorizer.lua",
+	},
+	{
+		"andweeb/presence.nvim",
+	}
 }
 
 local searching_plugins = {
@@ -120,7 +144,9 @@ local searching_plugins = {
 		dependencies = {
 			"junegunn/fzf",
 		},
-		config = function() end,
+		config = function()
+			require("lualine").setup({})
+		end,
 	},
 }
 

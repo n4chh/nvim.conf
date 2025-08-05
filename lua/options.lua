@@ -7,5 +7,5 @@ vim.o.relativenumber = true
 --vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
 vim.o.ts = 4
 vim.o.sw = 4
-vim.cmd([[colorscheme kanagawa-paper]])
-vim.g.winborder = "bold"
+vim.cmd([[colorscheme xcode]])
+vim.o.winborder = "rounded"
