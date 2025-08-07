@@ -8,3 +8,4 @@ vim.o.relativenumber = true
 vim.o.ts = 4
 vim.o.sw = 4
 vim.o.winborder = "rounded"
+vim.o.wrap = false

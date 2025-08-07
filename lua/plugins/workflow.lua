@@ -37,6 +37,7 @@ local mapping_plugins = {
 					{ "<leader>sc", desc = "Search commands", ":Commands<CR>" },
 					{ "<leader>x", group = "diagnostics/quickfix", icon = { icon = "󱖫 ", color = "green" } },
 					{ "<leader>y", desc = "Yank to system clipboard", '"+y' },
+					{ "<leader>p", desc = "Paste from system clipboard", '"+p' },
 					{ "<leader>d", desc = "Delete and yank to system clipboard", '"+d' },
 					{ "<leader>c", desc = "Change and yank to system clipboard", '"+c' },
 					{ "[", group = "prev" },
@@ -129,8 +130,15 @@ local visual_plugins = {
 			},
 		}
 	},
+
 	{
 		"norcalli/nvim-colorizer.lua",
+	},
+	{
+		"nvim-treesitter/nvim-treesitter",
+		dependencies = { "OXY2DEV/markview.nvim" },
+		lazy = false,
+		priority = 49,
 	},
 	{
 		"andweeb/presence.nvim",
