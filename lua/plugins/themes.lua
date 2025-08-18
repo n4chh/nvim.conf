@@ -12,5 +12,8 @@ return {
 		opts = {},
 		config = function()
 		end
+	},
+	{
+		'Mofiqul/vscode.nvim'
 	}
 }

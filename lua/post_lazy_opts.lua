@@ -1,1 +1,1 @@
-vim.cmd [[colorscheme xcode]]
+vim.cmd [[colorscheme vscode]]
