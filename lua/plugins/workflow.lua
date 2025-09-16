@@ -116,6 +116,12 @@ local visual_plugins = {
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
+		opts = {
+			options = {
+				section_separators = { left = '', right = '' },
+				component_separators = { left = '', right = '' }
+			}
+		},
 	},
 	{
 		"xiyaowong/transparent.nvim",
@@ -133,6 +139,11 @@ local visual_plugins = {
 
 	{
 		"norcalli/nvim-colorizer.lua",
+		config = function()
+			require 'colorizer'.setup {
+				'*'
+			}
+		end
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
