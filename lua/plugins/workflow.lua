@@ -114,16 +114,6 @@ local visual_plugins = {
 		end,
 	},
 	{
-		"nvim-lualine/lualine.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		opts = {
-			options = {
-				section_separators = { left = '', right = '' },
-				component_separators = { left = '', right = '' }
-			}
-		},
-	},
-	{
 		"xiyaowong/transparent.nvim",
 		opts = {
 			groups = {
