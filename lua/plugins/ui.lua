@@ -67,6 +67,14 @@ return {
 		event = "VeryLazy",
 		opts = {
 			-- add any options here
+			views = {
+				cmdline_popup = {
+					position = {
+						row = -2,
+						col = 0
+					}
+				}
+			}
 		},
 		dependencies = {
 			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
