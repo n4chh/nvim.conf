@@ -16,6 +16,27 @@ return {
 				section_separators = { left = '', right = '' },
 				component_separators = { left = '', right = '' }
 			},
+			sections = {
+				lualine_y = {
+					"progress",
+					{
+						require("noice").api.status.message.get_hl,
+						cond = require("noice").api.status.message.has,
+					},
+					{
+						require("noice").api.status.command.get,
+						cond = require("noice").api.status.command.has,
+					},
+					{
+						require("noice").api.status.mode.get,
+						cond = require("noice").api.status.mode.has,
+					},
+					{
+						require("noice").api.status.search.get,
+						cond = require("noice").api.status.search.has,
+					},
+				},
+			},
 		},
 	},
 	{
