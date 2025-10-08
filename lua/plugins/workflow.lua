@@ -28,6 +28,7 @@ local mapping_plugins = {
 					{ "<leader>e", desc = "explorer", ":Neotree toggle<CR>" },
 					{ "<leader>f", group = "find" },
 					{ "<leader>fs", desc = "search", ":Files<CR>" },
+					{ "<leader>K", desc = "hover", vim.lsp.buf.hover({ border = "bold" }) },
 					-- { "<leader>r", desc = "rename", vim.lsp.buf.rename },
 					{ "<F2>", desc = "rename", vim.lsp.buf.rename },
 					{ "<leader>s", group = "search" },

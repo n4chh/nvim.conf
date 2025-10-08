@@ -54,7 +54,6 @@ return {
 					},
 				},
 				menu = {
-					-- (default) they use winborder variable
 					-- border = { '▛', '▀', '▜', '▐', '▟', '▄', '▙', '▌' },
 					-- border = "rounded",
 				},
