@@ -1,5 +1,10 @@
 local mapping_plugins = {
 	{
+		'akinsho/toggleterm.nvim',
+		version = "*",
+		opts = {}
+	},
+	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
 		opts = {
@@ -41,6 +46,8 @@ local mapping_plugins = {
 					{ "<leader>p", desc = "Paste from system clipboard", '"+p' },
 					{ "<leader>d", desc = "Delete and yank to system clipboard", '"+d' },
 					{ "<leader>c", desc = "Change and yank to system clipboard", '"+c' },
+					{ "<leader>t", desc = "Toggle Terminal", ':ToggleTerm<CR>' },
+
 					{ "[", group = "prev" },
 					{ "]", group = "next" },
 					{ "g", group = "goto" },
