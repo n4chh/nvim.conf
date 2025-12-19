@@ -11,29 +11,33 @@ return {
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
-		opts = {
-			options = {
-				section_separators = { left = '', right = '' },
-				component_separators = { left = '', right = '' }
-			},
-			sections = {
-				lualine_y = {
-					"progress",
-					{
-						require("noice").api.status.command.get,
-						cond = require("noice").api.status.command.has,
-					},
-					{
-						require("noice").api.status.mode.get,
-						cond = require("noice").api.status.mode.has,
-					},
-					{
-						require("noice").api.status.search.get,
-						cond = require("noice").api.status.search.has,
-					},
+		opts = function()
+			local noice_ok, noice = pcall(require, "noice")
+			local lualine_y = { "progress"}
+			if noice_ok then
+				table.insert(lualine_y, {
+					noice.api.status.command.get,
+					cond = noice.api.status.command.has,
+				})
+				table.insert(lualine_y, {
+					noice.api.status.mode.get,
+					cond = noice.api.status.mode.has,
+				})
+				table.insert(lualine_y, {
+					noice.api.status.search.get,
+					cond = noice.api.status.search.has,
+				})
+			end
+			return {
+				options = {
+					section_separators = { left = '', right = '' },
+					component_separators = { left = '', right = '' }
 				},
-			},
-		},
+				sections = {
+					lualine_y = lualine_y
+				},
+			}
+		end,
 	},
 	{
 		"folke/snacks.nvim",
