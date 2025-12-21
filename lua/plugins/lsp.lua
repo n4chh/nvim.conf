@@ -25,10 +25,10 @@ return {
 		},
 		lazy = false,
 		build = ":TSUpdate",
-		config = function()
-			local configs = require("nvim-treesitter.configs")
+		-- config = function()
+		-- 	local treesitter = require("nvim-treesitter")
 
-			local settings = {
+		opts = {
 				ensure_installed = {
 					"bash",
 					"c",
@@ -64,8 +64,8 @@ return {
 					},
 				}
 			}
-			configs.setup(settings)
-		end
+			-- treesitter.setup(settings)
+		-- end
 	},
 	{
 		"mason-org/mason.nvim",
