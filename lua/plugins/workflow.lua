@@ -33,6 +33,7 @@ local mapping_plugins = {
 					{ "<leader>e", desc = "explorer", ":Neotree toggle<CR>" },
 					{ "<leader>f", group = "find" },
 					{ "<leader>fs", desc = "search", ":Files<CR>" },
+					{ "<leader>fg", desc = "rip-grep", ":Rg<CR>" },
 					{ "<leader>K", desc = "hover", vim.lsp.buf.hover({ border = "bold" }) },
 					-- { "<leader>r", desc = "rename", vim.lsp.buf.rename },
 					{ "<F2>", desc = "rename", vim.lsp.buf.rename },
@@ -41,6 +42,7 @@ local mapping_plugins = {
 					{ "<leader>sh", desc = "Search helptags", ":Helptags<CR>" },
 					{ "<leader>sm", desc = "Search mappings", ":Maps<CR>" },
 					{ "<leader>sc", desc = "Search commands", ":Commands<CR>" },
+
 					{ "<leader>x", group = "diagnostics/quickfix", icon = { icon = "󱖫 ", color = "green" } },
 					{ "<leader>y", desc = "Yank to system clipboard", '"+y' },
 					{ "<leader>p", desc = "Paste from system clipboard", '"+p' },
@@ -65,6 +67,7 @@ local mapping_plugins = {
 							return require("which-key.extras").expand.buf()
 						end,
 					},
+					{ "<leader>bc", desc = "Close buffer", ':<C-U>bprevious <bar> bdelete #<CR>' },
 					{
 						"<leader>w",
 						group = "windows",
@@ -142,12 +145,6 @@ local visual_plugins = {
 				'*'
 			}
 		end
-	},
-	{
-		"nvim-treesitter/nvim-treesitter",
-		dependencies = { "OXY2DEV/markview.nvim" },
-		lazy = false,
-		priority = 49,
 	},
 	{
 		"andweeb/presence.nvim",
