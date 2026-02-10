@@ -4,6 +4,7 @@ local mapping_plugins = {
 		version = "*",
 		opts = {}
 	},
+
 	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
@@ -109,6 +110,7 @@ local visual_plugins = {
 					-- 	theme = kanagawa_paper_ink,
 					-- }
 					-- })
+					-- vim.cmd[[ colorscheme kanagawa ]]
 				end,
 				set_light_mode = function()
 					-- local kanagawa_paper_canvas = require("lualine.themes.kanagawa-paper-canvas")
@@ -118,6 +120,7 @@ local visual_plugins = {
 					-- 	}
 					-- })
 					vim.api.nvim_set_option_value("background", "light", {})
+					-- vim.cmd[[ colorscheme kanagawa-paper ]]
 				end,
 				update_interval = 1000,
 				fallback = "dark",

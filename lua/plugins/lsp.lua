@@ -18,10 +18,13 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		dependencies = {
+			{
 			"nvim-treesitter/nvim-treesitter-context",
 			opts = {
 				enable = true
 			}
+			},
+		 	{ "OXY2DEV/markview.nvim" },
 		},
 		lazy = false,
 		build = ":TSUpdate",
