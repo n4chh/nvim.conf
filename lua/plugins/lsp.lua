@@ -18,20 +18,16 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		dependencies = {
-			{
-			"nvim-treesitter/nvim-treesitter-context",
-			opts = {
-				enable = true
-			}
-			},
+			{"nvim-treesitter/nvim-treesitter-context"},
 		 	{ "OXY2DEV/markview.nvim" },
 		},
 		lazy = false,
 		build = ":TSUpdate",
-		-- config = function()
-		-- 	local treesitter = require("nvim-treesitter")
+		config = function()
+			local treesitter = require("nvim-treesitter.configs")
 
-		opts = {
+		local  opts = {
+
 				ensure_installed = {
 					"bash",
 					"c",
@@ -67,8 +63,9 @@ return {
 					},
 				}
 			}
-			-- treesitter.setup(settings)
-		-- end
+			treesitter.setup(opts)
+			require("treesitter-context").setup({enable = true})
+		end
 	},
 	{
 		"mason-org/mason.nvim",
