@@ -51,6 +51,14 @@ local mapping_plugins = {
 					{ "<leader>c", desc = "Change and yank to system clipboard", '"+c' },
 					{ "<leader>t", desc = "Toggle Terminal", ':ToggleTerm<CR>' },
 
+
+					-- git
+					{ "<leader>g", group = "git" },
+					{ "<leader>gb", group = "buffers" },
+
+					{ "<leader>gbh", desc = "buffer git history", ":buffer_history_preview<CR>" },
+					{ "<leader>gbb", desc = "buffer git blame", ":VGit buffer_blame_preview<CR>" },
+					{ "<leader>gbd", desc = "buffer git diff", ":VGit buffer_diff_preview<CR>" },
 					{ "[", group = "prev" },
 					{ "]", group = "next" },
 					{ "g", group = "goto" },
@@ -68,7 +76,7 @@ local mapping_plugins = {
 							return require("which-key.extras").expand.buf()
 						end,
 					},
-					{ "<leader>bc", desc = "Close buffer", ':<C-U>bprevious <bar> bdelete #<CR>' },
+					{ "<leader>bc", desc = "Close buffer",        ':<C-U>bprevious <bar> bdelete #<CR>' },
 					{
 						"<leader>w",
 						group = "windows",
@@ -78,7 +86,7 @@ local mapping_plugins = {
 						end,
 					},
 					-- better descriptions
-					{ "gx", desc = "Open with system app" },
+					{ "gx",         desc = "Open with system app" },
 				},
 			},
 		},
@@ -140,7 +148,13 @@ local visual_plugins = {
 			},
 		}
 	},
-
+	{
+		'tanvirtin/vgit.nvim',
+		dependencies = { 'nvim-lua/plenary.nvim', 'nvim-tree/nvim-web-devicons' },
+		-- Lazy loading on 'VimEnter' event is necessary.
+		event = 'VimEnter',
+		config = function() require("vgit").setup() end,
+	},
 	{
 		"catgoose/nvim-colorizer.lua",
 		config = function()

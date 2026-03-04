@@ -4,6 +4,8 @@ vim.lsp.enable({
 	"pyright",
 	"gopls",
 	"clangd",
+	"ts_ls",
+	"rust_analyzer"
 	-- "asm_lsp",
 })
 
