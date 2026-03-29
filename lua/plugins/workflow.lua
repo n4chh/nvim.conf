@@ -4,7 +4,6 @@ local mapping_plugins = {
 		version = "*",
 		opts = {}
 	},
-
 	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
@@ -32,6 +31,13 @@ local mapping_plugins = {
 				{
 					mode = { "n", "v" },
 					{ "<leader>e", desc = "explorer", ":Neotree toggle<CR>" },
+					{
+						"<leader>F",
+						desc = "formater",
+						function()
+							vim.lsp.buf.format()
+						end
+					},
 					{ "<leader>f", group = "find" },
 					{ "<leader>fs", desc = "search", ":Files<CR>" },
 					{ "<leader>fg", desc = "rip-grep", ":Rg<CR>" },
@@ -184,7 +190,7 @@ local searching_plugins = {
 local plugins = {
 	mapping_plugins,
 	visual_plugins,
-	searching_plugins,
+	searching_plugins
 }
 local plugins_table = {}
 for _, v in ipairs(plugins) do
