@@ -1,200 +1,24 @@
-local mapping_plugins = {
-	{
-		'akinsho/toggleterm.nvim',
-		version = "*",
-		opts = {}
-	},
-	{
-		"folke/which-key.nvim",
-		event = "VeryLazy",
-		opts = {
-			-- your configuration comes here
-			-- or leave it empty to use the default settings
-			-- refer to the configuration section below
-			-- preset = "helix",
-			win = {
-				width = { min = 30, max = 80 },
-				height = { min = 4, max = 0.75 },
-				padding = { 0, 1 },
-				col = -1,
-				row = -1,
-				-- border = { "▛", "▀", "▜", "▐", "▟", "▄", "▙", "▌" },
-				border = vim.o.winborder,
-				title = true,
-				title_pos = "left",
-			},
-			layout = {
-				width = { min = 30 },
-			},
-			defaults = {},
-			spec = {
-				{
-					mode = { "n", "v" },
-					{ "<leader>e", desc = "explorer", ":Neotree toggle<CR>" },
-					{
-						"<leader>F",
-						desc = "formater",
-						function()
-							vim.lsp.buf.format()
-						end
-					},
-					{ "<leader>f", group = "find" },
-					{ "<leader>fs", desc = "search", ":Files<CR>" },
-					{ "<leader>fg", desc = "rip-grep", ":Rg<CR>" },
-					{ "<leader>K", desc = "hover", vim.lsp.buf.hover({ border = "bold" }) },
-					-- { "<leader>r", desc = "rename", vim.lsp.buf.rename },
-					{ "<F2>", desc = "rename", vim.lsp.buf.rename },
-					{ "<leader>s", group = "search" },
-					{ "<leader>sC", desc = "Search Colorscheme", ":Colors<CR>" },
-					{ "<leader>sh", desc = "Search helptags", ":Helptags<CR>" },
-					{ "<leader>sm", desc = "Search mappings", ":Maps<CR>" },
-					{ "<leader>sc", desc = "Search commands", ":Commands<CR>" },
 
-					{ "<leader>x", group = "diagnostics/quickfix", icon = { icon = "󱖫 ", color = "green" } },
-					{ "<leader>y", desc = "Yank to system clipboard", '"+y' },
-					{ "<leader>p", desc = "Paste from system clipboard", '"+p' },
-					{ "<leader>d", desc = "Delete and yank to system clipboard", '"+d' },
-					{ "<leader>c", desc = "Change and yank to system clipboard", '"+c' },
-					{ "<leader>t", desc = "Toggle Terminal", ':ToggleTerm<CR>' },
+vim.pack.add({
+	"https://github.com/akinsho/toggleterm.nvim",
+})
 
+require("toggleterm").setup({})
 
-					-- git
-					{ "<leader>g", group = "git" },
-					{ "<leader>gb", group = "buffers" },
-
-					{ "<leader>gbh", desc = "buffer git history", ":buffer_history_preview<CR>" },
-					{ "<leader>gbb", desc = "buffer git blame", ":VGit buffer_blame_preview<CR>" },
-					{ "<leader>gbd", desc = "buffer git diff", ":VGit buffer_diff_preview<CR>" },
-					{ "[", group = "prev" },
-					{ "]", group = "next" },
-					{ "g", group = "goto" },
-					{ "gs", group = "surround" },
-					{ "z", group = "fold" },
-					{
-						"<leader>d",
-						desc = "Show diagnostic",
-						vim.diagnostic.open_float,
-					},
-					{
-						"<leader>b",
-						group = "buffer",
-						expand = function()
-							return require("which-key.extras").expand.buf()
-						end,
-					},
-					{ "<leader>bc", desc = "Close buffer",        ':<C-U>bprevious <bar> bdelete #<CR>' },
-					{
-						"<leader>w",
-						group = "windows",
-						proxy = "<c-w>",
-						expand = function()
-							return require("which-key.extras").expand.win()
-						end,
-					},
-					-- better descriptions
-					{ "gx",         desc = "Open with system app" },
-				},
-			},
-		},
-		keys = {
-			{
-				"<leader>?",
-				function()
-					require("which-key").show({ global = false })
-				end,
-				desc = "Buffer Local Keymaps (which-key)",
-			},
-		},
-	},
-}
-
-local visual_plugins = {
-	{
-		"f-person/auto-dark-mode.nvim",
-		config = function()
-			local adm = require("auto-dark-mode")
-			-- local lualine = require("lualine")
-
-			adm.setup({
-				set_dark_mode = function()
-					vim.api.nvim_set_option_value("background", "dark", {})
-					-- local kanagawa_paper_ink = require("lualine.themes.kanagawa-paper-ink")
-					-- lualine.setup({
-					-- options = {
-					-- 	theme = kanagawa_paper_ink,
-					-- }
-					-- })
-					-- vim.cmd[[ colorscheme kanagawa ]]
-				end,
-				set_light_mode = function()
-					-- local kanagawa_paper_canvas = require("lualine.themes.kanagawa-paper-canvas")
-					-- lualine.setup({
-					-- 	options = {
-					-- 		theme = kanagawa_paper_canvas,
-					-- 	}
-					-- })
-					vim.api.nvim_set_option_value("background", "light", {})
-					-- vim.cmd[[ colorscheme kanagawa-paper ]]
-				end,
-				update_interval = 1000,
-				fallback = "dark",
-			})
-		end,
-	},
-	{
-		"xiyaowong/transparent.nvim",
-		opts = {
-			groups = {
-				"NormalFloat", "FloatBorder",
-				'Normal', 'NormalNC', 'Comment', 'Constant', 'Special', 'Identifier',
-				'Statement', 'PreProc', 'Type', 'Underlined', 'Todo', 'String', 'Function',
-				'Conditional', 'Repeat', 'Operator', 'Structure', 'LineNr', 'NonText',
-				'SignColumn', 'CursorLine', 'CursorLineNr', 'StatusLine', 'StatusLineNC',
-				'EndOfBuffer',
-			},
-		}
-	},
-	{
-		'tanvirtin/vgit.nvim',
-		dependencies = { 'nvim-lua/plenary.nvim', 'nvim-tree/nvim-web-devicons' },
-		-- Lazy loading on 'VimEnter' event is necessary.
-		event = 'VimEnter',
-		config = function() require("vgit").setup() end,
-	},
-	{
-		"catgoose/nvim-colorizer.lua",
-		config = function()
-			require 'colorizer'.setup {
-				'*'
-			}
-		end
-	},
-	{
-		"andweeb/presence.nvim",
-	}
-}
-
-local searching_plugins = {
-	{
-		"junegunn/fzf.vim",
-		lazy = false,
-		dependencies = {
-			"junegunn/fzf",
-		},
-		config = function()
-			require("lualine").setup({})
-		end,
-	},
-}
-
-local plugins = {
-	mapping_plugins,
-	visual_plugins,
-	searching_plugins
-}
-local plugins_table = {}
-for _, v in ipairs(plugins) do
-	table.insert(plugins_table, v)
-end
-
-return plugins_table
+-- VGit
+vim.pack.add({
+	'https://github.com/tanvirtin/vgit.nvim',
+	-- deps
+	'https://github.com/nvim-lua/plenary.nvim',
+	'https://github.com/nvim-tree/nvim-web-devicons',
+})
+require("vgit").setup({})
+vim.pack.add({
+	-- Discord Presence
+	"https://github.com/andweeb/presence.nvim",
+	-- FZF: doesn't need to call "require"
+	"https://github.com/junegunn/fzf.vim",
+	-- FZF dependencies
+	"https://github.com/junegunn/fzf",
+})
+require("presence").setup({})
