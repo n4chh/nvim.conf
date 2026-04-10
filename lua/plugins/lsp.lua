@@ -23,8 +23,8 @@ vim.lsp.enable({
 vim.pack.add({
 	"https://github.com/nvim-treesitter/nvim-treesitter",
 	-- dependencies
-	-- "nvim-treesitter/nvim-treesitter-context",
-	-- "OXY2DEV/markview.nvim" ,
+	"https://github.com/nvim-treesitter/nvim-treesitter-context",
+	"https://github.com/OXY2DEV/markview.nvim" ,
 })
 
 local ensure_installed = {

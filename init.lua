@@ -19,6 +19,7 @@ else
 	require("plugins.mappings")
 	require("plugins.ui")
 	require("plugins.workflow")
+	require("plugins.ai")
 
 	require("themes.rosepine")
 	require("themes.kanagawa")
