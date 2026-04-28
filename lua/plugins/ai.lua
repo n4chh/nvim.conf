@@ -5,30 +5,17 @@ vim.pack.add({
   "https://github.com/yetone/avante.nvim",
 })
 require("avante").setup({
+  highlights = {
+      diff = {
+        current = "DiffText",
+        incoming = "DiffAdd",
+      },
+},
   provider = "claude-code",
 
-  providers = {
-    claude = {
-      endpoint = "https://api.anthropic.com",
-      model = "claude-sonnet-4-6",
-      timeout = 30000,
-      extra_request_body = {
-        temperature = 0.75,
-        max_tokens = 32000,
-      },
-    },
-  },
   acp_providers = {
-	["claude-code"] = {
-      command = "npx",
-      args = { "@zed-industries/claude-code-acp" },
-      env = {
-        NODE_NO_WARNINGS = "1",
-        ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY"),
-      },
-    },
-    ["kiro"] = {
-      command = os.getenv("HOME") .. "/.local/bin/kiro-cli",
+    ["kiro-acp"] = {
+      command = os.getenv("HOME") .. "/.toolbox/bin/kiro-cli",
       args = { "acp" },
     },
   },
@@ -42,3 +29,5 @@ require("avante").setup({
   -- Project-specific instructions (like CLAUDE.md)
   instructions_file = "avante.md",
 })
+
+vim.api.nvim_set_hl(0, "AvanteToBeDeletedWOStrikethrough", { link = "DiffDelete" })

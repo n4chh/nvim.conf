@@ -27,6 +27,15 @@ vim.pack.add({
 	"https://github.com/OXY2DEV/markview.nvim" ,
 })
 
+
+require("markview").setup {
+	preview = {
+      filetypes = { "markdown", "Avante" },
+      ignore_buftypes = {},
+    },
+    max_length = 99999,
+}
+
 local ensure_installed = {
 	"bash",
 	"c",

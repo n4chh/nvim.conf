@@ -16,10 +16,11 @@ else
 	require("plugins.explorer")
 	require("plugins.lsp")
 	require("plugins.cmp")
-	require("plugins.mappings")
 	require("plugins.ui")
+	require("plugins.claudecode")
 	require("plugins.workflow")
 	require("plugins.ai")
+	require("plugins.mappings")
 
 	require("themes.rosepine")
 	require("themes.kanagawa")

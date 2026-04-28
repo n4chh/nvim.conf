@@ -53,6 +53,19 @@ vim.g.maplocalleader = " "
 					{ "<leader>t", desc = "Toggle Terminal", ':ToggleTerm<CR>' },
 
 
+					-- Claude Code
+					{ "<leader>a",  group = "claude",            icon = { icon = "󰚩 ", color = "orange" } },
+					{ "<leader>ac", desc = "Toggle Claude",      "<cmd>ClaudeCode<cr>" },
+					{ "<leader>af", desc = "Focus Claude",       "<cmd>ClaudeCodeFocus<cr>" },
+					{ "<leader>ar", desc = "Resume session",     "<cmd>ClaudeCode --resume<cr>" },
+					{ "<leader>aC", desc = "Continue last",      "<cmd>ClaudeCode --continue<cr>" },
+					{ "<leader>am", desc = "Select model",       "<cmd>ClaudeCodeSelectModel<cr>" },
+					{ "<leader>ab", desc = "Add current buffer", "<cmd>ClaudeCodeAdd %<cr>" },
+					{ "<leader>as", desc = "Send selection",     "<cmd>ClaudeCodeSend<cr>",      mode = "v" },
+					{ "<leader>at", desc = "Add from tree",      "<cmd>ClaudeCodeTreeAdd<cr>" },
+					{ "<leader>ay", desc = "Accept diff",        "<cmd>ClaudeCodeDiffAccept<cr>" },
+					{ "<leader>ax", desc = "Reject diff",        "<cmd>ClaudeCodeDiffDeny<cr>" },
+
 					-- git
 					{ "<leader>g", group = "git" },
 					{ "<leader>gb", group = "buffers" },
