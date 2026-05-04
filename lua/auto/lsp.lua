@@ -1,6 +1,16 @@
 vim.api.nvim_create_autocmd("LspAttach", {
 	-- group = vim.api.nvim_create_augroup('my.lsp', {}),
 	callback = function(args)
+		-- mappings
+		local buf = args.buf
+		require("which-key").add({
+			{ "gd", vim.lsp.buf.definition,      desc = "Go to definition",      buffer = buf },
+			{ "gD", vim.lsp.buf.declaration,     desc = "Go to declaration",     buffer = buf },
+			{ "gi", vim.lsp.buf.implementation,  desc = "Go to implementation",  buffer = buf },
+			{ "gt", vim.lsp.buf.type_definition, desc = "Go to type definition", buffer = buf },
+		})
+
+
 		local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
 		-- if client:supports_method('textDocument/implementation') then
 		--   -- Create a keymap for vim.lsp.buf.implementation ...

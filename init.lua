@@ -26,6 +26,6 @@ else
 	require("themes.kanagawa")
 	require("themes.catppuccin")
 
-	vim.cmd [[colorscheme catppuccin]]
+	vim.cmd [[colorscheme rose-pine]]
 	require("auto")
 end
