@@ -233,14 +233,15 @@ table.insert(lualine_y, {
 })
 local opts = {
 	options = {
-		-- section_separators = { left = '', right = '' },
-		-- component_separators = { left = '', right = '' }
-		section_separators = { left = '', right = '' },
-		component_separators = { left = '', right = '' }
+		section_separators = { left = '', right = '' },
+		component_separators = { left = '', right = '' }
+		-- section_separators = { left = '', right = '' },
+		-- component_separators = { left = '', right = '' }
 	},
 	theme = "auto",
 	icons_enabled = true,
 	sections = {
+		lualine_c = { { "filename", path = 3 } },
 		lualine_y = lualine_y
 	},
 }
