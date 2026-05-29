@@ -21,4 +21,7 @@ vim.pack.add({
 	-- FZF dependencies
 	"https://github.com/junegunn/fzf",
 })
-require("presence").setup({})
+require("presence").setup({
+	editing_text = function() return "Editing " .. vim.fn.expand("%:.") end,
+	reading_text = function() return "Reading " .. vim.fn.expand("%:.") end,
+})
