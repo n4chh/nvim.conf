@@ -26,6 +26,7 @@ else
 	require("themes.kanagawa")
 	require("themes.catppuccin")
 	require("themes.vague")
+	require("themes.nightfox")
 
 	vim.cmd [[colorscheme vague]]
 	require("auto")
