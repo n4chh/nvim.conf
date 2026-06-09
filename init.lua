@@ -13,6 +13,12 @@ if vim.g.vscode then
 	require("vscode_settings")
 else
 
+	require("themes.rosepine")
+	require("themes.kanagawa")
+	require("themes.catppuccin")
+	require("themes.vague")
+	require("themes.nightfox")
+
 	require("plugins.explorer")
 	require("plugins.lsp")
 	require("plugins.cmp")
@@ -21,13 +27,6 @@ else
 	require("plugins.workflow")
 	require("plugins.ai")
 	require("plugins.mappings")
-
-	require("themes.rosepine")
-	require("themes.kanagawa")
-	require("themes.catppuccin")
-	require("themes.vague")
-	require("themes.nightfox")
-
-	vim.cmd [[colorscheme vague]]
+	-- vim.cmd [[colorscheme vague]]
 	require("auto")
 end
