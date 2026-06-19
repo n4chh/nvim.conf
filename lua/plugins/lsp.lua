@@ -49,6 +49,7 @@ local ensure_installed = {
 	"html",
 	"javascript",
 	"json",
+	"linkerscript",
 	"lua",
 	"make",
 	"markdown",
