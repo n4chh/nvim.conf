@@ -1,36 +1,3 @@
--- Auto Dark/Light mode
-
-vim.pack.add({
-	"https://github.com/f-person/auto-dark-mode.nvim",
-})
-local adm = require("auto-dark-mode")
--- local lualine = require("lualine")
-
-adm.setup({
-	set_dark_mode = function()
-		vim.api.nvim_set_option_value("background", "dark", {})
-		-- local kanagawa_paper_ink = require("lualine.themes.kanagawa-paper-ink")
-		-- lualine.setup({
-		-- options = {
-		-- 	theme = kanagawa_paper_ink,
-		-- }
-		-- })
-		vim.cmd[[ colorscheme vague ]]
-	end,
-	set_light_mode = function()
-		-- local kanagawa_paper_canvas = require("lualine.themes.kanagawa-paper-canvas")
-		-- lualine.setup({
-		-- 	options = {
-		-- 		theme = kanagawa_paper_canvas,
-		-- 	}
-		-- })
-		vim.api.nvim_set_option_value("background", "light", {})
-		vim.cmd[[ colorscheme dayfox ]]
-	end,
-	update_interval = 1000,
-	fallback = "dark",
-})
-
 -- Telescope
 vim.pack.add({
 	"https://github.com/nvim-telescope/telescope.nvim",
@@ -240,9 +207,34 @@ local opts = {
 	},
 	theme = "auto",
 	icons_enabled = true,
+	globalstatus = true,
 	sections = {
 		lualine_c = { { "filename", path = 3 } },
 		lualine_y = lualine_y
 	},
 }
 require("lualine").setup(opts)
+
+
+-- Incline: floating per-window filename labels
+vim.pack.add({
+	"https://github.com/b0o/incline.nvim",
+	"https://github.com/nvim-tree/nvim-web-devicons", -- already added above; harmless
+})
+require("incline").setup({
+	window = {
+		margin = { vertical = 0, horizontal = 1 },
+		padding = 1,
+	},
+	render = function(props)
+		local bufname = vim.api.nvim_buf_get_name(props.buf)
+		local filename = bufname ~= "" and vim.fn.fnamemodify(bufname, ":t") or "[No Name]"
+		local icon, color = require("nvim-web-devicons").get_icon_color(filename)
+		local modified = vim.bo[props.buf].modified
+		return {
+			icon and { icon .. " ", guifg = color } or "",
+			{ filename, gui = modified and "bold,italic" or "bold" },
+			modified and { " ●", guifg = "#ff9e64" } or "",
+		}
+	end,
+})

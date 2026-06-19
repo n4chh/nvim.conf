@@ -27,6 +27,17 @@ else
 	require("plugins.workflow")
 	require("plugins.ai")
 	require("plugins.mappings")
-	-- vim.cmd [[colorscheme vague]]
+
+	require("themes.rosepine")
+	require("themes.kanagawa")
+	require("themes.catppuccin")
+	require("themes.vague")
+	require("themes.nightfox")
+	require("themes.melange")
+	require("themes.monokai-pro")
+	require("themes.zenbones")
+	require("themes.github")
+
+	vim.cmd [[colorscheme zenbones]]
 	require("auto")
 end
