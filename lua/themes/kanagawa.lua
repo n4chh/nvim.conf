@@ -16,8 +16,17 @@ local opts = {
 	dimInactive = true,  -- dim inactive window `:h hl-NormalNC`
 	terminalColors = true, -- define vim.g.terminal_color_{0,17}
 	colors = {            -- add/modify theme and palette colors
-		palette = {},
-		theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+		palette = {
+			lotusWhite0 = "#e3dddb",
+			lotusWhite1 = "#e7e2e0",
+			lotusWhite2 = "#eae6e4",
+			lotusWhite3 = "#f0edec",
+			lotusWhite4 = "#e7e2e0",
+			lotusWhite5 = "#e3dddb",
+		},
+		theme = { wave = {}, lotus = {
+
+		}, dragon = {}, all = {} },
 	},
 	overrides = function(colors) -- add/modify highlights
 		return {}

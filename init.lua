@@ -38,6 +38,6 @@ else
 	require("themes.zenbones")
 	require("themes.github")
 
-	vim.cmd [[colorscheme zenbones]]
+	vim.cmd [[colorscheme kanagawa]]
 	require("auto")
 end
