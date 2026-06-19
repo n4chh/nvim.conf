@@ -27,7 +27,11 @@ else
 	require("themes.catppuccin")
 	require("themes.vague")
 	require("themes.nightfox")
+	require("themes.melange")
+	require("themes.monokai-pro")
+	require("themes.zenbones")
+	require("themes.github")
 
-	vim.cmd [[colorscheme vague]]
+	vim.cmd [[colorscheme zenbones]]
 	require("auto")
 end

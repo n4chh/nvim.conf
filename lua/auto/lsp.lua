@@ -7,7 +7,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			{ "gd", vim.lsp.buf.definition,      desc = "Go to definition",      buffer = buf },
 			{ "gD", vim.lsp.buf.declaration,     desc = "Go to declaration",     buffer = buf },
 			{ "gi", vim.lsp.buf.implementation,  desc = "Go to implementation",  buffer = buf },
-			{ "gt", vim.lsp.buf.type_definition, desc = "Go to type definition", buffer = buf },
+			{ "gy", vim.lsp.buf.type_definition, desc = "Go to type definition", buffer = buf },
 		})
 
 

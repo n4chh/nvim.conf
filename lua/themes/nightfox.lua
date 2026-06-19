@@ -4,6 +4,6 @@ vim.pack.add({
 
 require("nightfox").setup{
 	options ={
-		transparent = true
+		-- transparent = true
 	}
 }
