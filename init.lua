@@ -20,6 +20,7 @@ else
 	require("themes.nightfox")
 
 	require("plugins.explorer")
+	require("plugins.neogit")
 	require("plugins.lsp")
 	require("plugins.cmp")
 	require("plugins.ui")
