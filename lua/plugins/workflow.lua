@@ -1,18 +1,3 @@
-
-vim.pack.add({
-	"https://github.com/akinsho/toggleterm.nvim",
-})
-
-require("toggleterm").setup({})
-
--- VGit
-vim.pack.add({
-	'https://github.com/tanvirtin/vgit.nvim',
-	-- deps
-	'https://github.com/nvim-lua/plenary.nvim',
-	'https://github.com/nvim-tree/nvim-web-devicons',
-})
-require("vgit").setup({})
 vim.pack.add({
 	-- Discord Presence
 	"https://github.com/andweeb/presence.nvim",
