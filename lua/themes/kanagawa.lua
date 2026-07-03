@@ -17,12 +17,13 @@ local opts = {
 	terminalColors = true, -- define vim.g.terminal_color_{0,17}
 	colors = {            -- add/modify theme and palette colors
 		palette = {
-			lotusWhite0 = "#e3dddb",
-			lotusWhite1 = "#e7e2e0",
-			lotusWhite2 = "#eae6e4",
-			lotusWhite3 = "#f0edec",
-			lotusWhite4 = "#e7e2e0",
-			lotusWhite5 = "#e3dddb",
+			-- Matched to opencode kanagawa theme (light)
+			lotusWhite0 = "#e3dcd2", -- backgroundElement
+			lotusWhite1 = "#eae4d7", -- backgroundPanel
+			lotusWhite2 = "#eae4d7",
+			lotusWhite3 = "#f2e9de", -- background
+			lotusWhite4 = "#eae4d7",
+			lotusWhite5 = "#e3dcd2",
 		},
 		theme = { wave = {}, lotus = {
 
