@@ -201,6 +201,7 @@ table.insert(lualine_y, {
 local opts = {
 	options = {
 		section_separators = { left = '', right = '' },
+  		separator = { left = '', right = '' },
 		component_separators = { left = '', right = '' }
 		-- section_separators = { left = '', right = '' },
 		-- component_separators = { left = '', right = '' }
