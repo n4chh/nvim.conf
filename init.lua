@@ -28,6 +28,7 @@ else
 	require("plugins.workflow")
 	require("plugins.ai")
 	require("plugins.mappings")
+	require("plugins.auto-dark-mode")
 
 	require("themes.rosepine")
 	require("themes.kanagawa")
