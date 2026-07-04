@@ -31,3 +31,24 @@ require("avante").setup({
 })
 
 vim.api.nvim_set_hl(0, "AvanteToBeDeletedWOStrikethrough", { link = "DiffDelete" })
+
+
+vim.pack.add({
+  {
+    src = "https://github.com/nickjvandyke/opencode.nvim",
+    version = vim.version.range("*"), -- Latest stable release
+  },
+})
+
+---@type opencode.Opts
+vim.g.opencode_opts = {
+  server = {
+    start = function()
+      -- Open opencode terminal on the right side
+      vim.cmd("botright vsplit term://opencode --port | wincmd p")
+    end,
+  },
+}
+
+vim.o.autoread = true -- Required for `vim.g.opencode_opts.events.reload`
+

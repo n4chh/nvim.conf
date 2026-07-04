@@ -200,6 +200,65 @@ local opts = {
 					})
 				end,
 			},
+					-- Claude Code
+					{ "<leader>a",  group = "claude",            icon = { icon = "󰚩 ", color = "orange" } },
+					{ "<leader>ac", desc = "Toggle Claude",      "<cmd>ClaudeCode<cr>" },
+					{ "<leader>af", desc = "Focus Claude",       "<cmd>ClaudeCodeFocus<cr>" },
+					{ "<leader>ar", desc = "Resume session",     "<cmd>ClaudeCode --resume<cr>" },
+					{ "<leader>aC", desc = "Continue last",      "<cmd>ClaudeCode --continue<cr>" },
+					{ "<leader>am", desc = "Select model",       "<cmd>ClaudeCodeSelectModel<cr>" },
+					{ "<leader>ab", desc = "Add current buffer", "<cmd>ClaudeCodeAdd %<cr>" },
+					{ "<leader>as", desc = "Send selection",     "<cmd>ClaudeCodeSend<cr>",      mode = "v" },
+					{ "<leader>at", desc = "Add from tree",      "<cmd>ClaudeCodeTreeAdd<cr>" },
+					{ "<leader>ay", desc = "Accept diff",        "<cmd>ClaudeCodeDiffAccept<cr>" },
+					{ "<leader>ax", desc = "Reject diff",        "<cmd>ClaudeCodeDiffDeny<cr>" },
+
+					-- OpenCode
+  					{ "<leader>o", group = "OpenCode", icon = { icon = "󰚩 ", color = "purple" } },
+  					{ "<leader>oa", function() require("opencode").ask("@this: ") end, desc = "Ask OpenCode…", mode = { "n", "x" } },
+  					{ "<leader>os", function() require("opencode").select() end,       desc = "Select OpenCode…", mode = { "n", "x" } },
+
+  					{ "go",  function() return require("opencode").operator("@this ") end,        desc = "Append range to OpenCode", mode = { "n", "x" }, expr = true },
+  					{ "goo", function() return require("opencode").operator("@this ") .. "_" end, desc = "Append line to OpenCode",  expr = true },
+
+  					{ "<S-C-u>", function() require("opencode").command("session.half.page.up") end,   desc = "Scroll OpenCode up" },
+  					{ "<S-C-d>", function() require("opencode").command("session.half.page.down") end, desc = "Scroll OpenCode down" },
+
+					-- git
+					{ "<leader>g", group = "git" },
+					{ "<leader>gb", group = "buffers" },
+
+					{ "<leader>gbh", desc = "buffer git history", ":buffer_history_preview<CR>" },
+					{ "<leader>gbb", desc = "buffer git blame", ":VGit buffer_blame_preview<CR>" },
+					{ "<leader>gbd", desc = "buffer git diff", ":VGit buffer_diff_preview<CR>" },
+					{ "[", group = "prev" },
+					{ "]", group = "next" },
+					{ "g", group = "goto" },
+					{ "gs", group = "surround" },
+					{ "z", group = "fold" },
+					{
+						"<leader>D",
+						desc = "Show diagnostic",
+						vim.diagnostic.open_float,
+					},
+					{
+						"<leader>b",
+						group = "buffer",
+						expand = function()
+							return require("which-key.extras").expand.buf()
+						end,
+					},
+					{ "<leader>bc", desc = "Close buffer",        ':<C-U>bprevious <bar> bdelete #<CR>' },
+					{
+						"<leader>w",
+						group = "windows",
+						proxy = "<c-w>",
+						expand = function()
+							return require("which-key.extras").expand.win()
+						end,
+					},
+					-- better descriptions
+					{ "gx",         desc = "Open with system app" },
 			{
 				"<leader>?",
 				function()
