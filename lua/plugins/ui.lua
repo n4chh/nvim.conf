@@ -198,10 +198,12 @@ table.insert(lualine_y, {
 	noice.api.status.search.get,
 	cond = noice.api.status.search.has,
 })
+
 local opts = {
 	options = {
+  		-- separator = { left = '', right = '' },
+		-- section_separators = { left = '', right = '' },
 		section_separators = { left = '', right = '' },
-  		separator = { left = '', right = '' },
 		component_separators = { left = '', right = '' }
 		-- section_separators = { left = '', right = '' },
 		-- component_separators = { left = '', right = '' }
@@ -210,8 +212,13 @@ local opts = {
 	icons_enabled = true,
 	globalstatus = true,
 	sections = {
+		lualine_a = { { 'mode', separator = { left = '' } } },
 		lualine_c = { { "filename", path = 3 } },
-		lualine_y = lualine_y
+		lualine_y = lualine_y,
+    	lualine_z = {
+      	{ 'location', separator = { right = '' }, },
+	}
+
 	},
 }
 require("lualine").setup(opts)
