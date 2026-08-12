@@ -23,6 +23,7 @@ else
 	require("plugins.neogit")
 	require("plugins.lsp")
 	require("plugins.cmp")
+	require("plugins.debugger")
 	require("plugins.ui")
 	require("plugins.claudecode")
 	require("plugins.workflow")
